@@ -27,7 +27,7 @@ SECRET_KEY = 'g6^*+3-p=$i1e6(^)bvyo@tx_9use#_gf_g@&^j4$*^4&r&4)r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 import django_heroku
-ALLOWED_HOSTS = ['movies-imdb-project.herokuapp.com']
+ALLOWED_HOSTS = ['movies-imdb-project.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -86,10 +86,7 @@ DATABASES = {
         'ENGINE':'djongo',
         'NAME': 'movies_db',
          'CLIENT': {
-            'HOST': "mongodb+srv://admin_user:"+urllib.parse.quote_plus('admin123')+"@movies.kigc5.mongodb.net/movies_db?retryWrites=true&w=majority",
-              'port': 27017,
-              'username': 'admin_user',
-              'password': 'admin123',
+              'host': "mongodb+srv://admin_user:"+urllib.parse.quote_plus('admin123')+"@movies.kigc5.mongodb.net/movies_db?retryWrites=true&w=majority",
             }
     }
 }
