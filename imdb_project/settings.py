@@ -27,7 +27,7 @@ SECRET_KEY = 'g6^*+3-p=$i1e6(^)bvyo@tx_9use#_gf_g@&^j4$*^4&r&4)r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 import django_heroku
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['movies-imdb-project.herokuapp.com']
 
 
 # Application definition
