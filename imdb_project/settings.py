@@ -85,11 +85,12 @@ DATABASES = {
     'default': {
         'ENGINE':'djongo',
         'NAME': 'movies_db',
-        'HOST': "mongodb+srv://admin_user:"+urllib.parse.quote_plus('admin123')+"@movies.kigc5.mongodb.net/movies_db?retryWrites=true&w=majority",
-        'port': 27017,
-        'USER': 'admin_user',
-        'PASSWORD': 'admin123',
-        'authMechanism': "SCRAM-SHA-1",
+         'CLIENT': {
+            'HOST': "mongodb+srv://admin_user:"+urllib.parse.quote_plus('admin123')+"@movies.kigc5.mongodb.net/movies_db?retryWrites=true&w=majority",
+              'port': 27017,
+              'username': 'admin_user',
+              'password': 'admin123',
+            }
     }
 }
 
