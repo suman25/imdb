@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import urllib
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -69,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'imdb_project.wsgi.application'
+WSGI_APPLICATION = 'imdb_project.wsgi.application'
 REST_FRAMEWORK={
 
 'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
@@ -83,7 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE':'djongo',
         'NAME': 'movies_db',
-        'HOST': 'mongodb+srv://admin_user:admin123@movies.kigc5.mongodb.net/movies_db?retryWrites=true&w=majority',
+        'HOST': "mongodb+srv://admin_user:"+urllib.parse.quote_plus('admin123')+"@movies.kigc5.mongodb.net/movies_db?retryWrites=true&w=majority",
         'USER': 'admin_user',
         'PASSWORD': 'admin123',
         "authMechanism": "SCRAM-SHA-1",
@@ -127,4 +129,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
